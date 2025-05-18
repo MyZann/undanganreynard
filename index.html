@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Fadhil & Reynard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for elegant look */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f4f0; /* Soft off-white background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #5a4a42; /* Muted dark brown */
+        }
+
+        .section-bg {
+            background-color: #fff; /* White background for sections */
+            box-shadow: 0 4px 6px rgba(0 0 0 / 0.1);
+        }
+
+        .btn-primary {
+            background-color: #8a7b74; /* Muted brown */
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #6d5f59; /* Darker muted brown on hover */
+        }
+
+        /* Ensure images are responsive */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; /* Slightly rounded corners for images */
+        }
+
+        /* Optional: Add a subtle pattern or texture */
+        /* body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('path/to/subtle-pattern.png');
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: -1;
+        } */
+
+        /* --- Animations --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0; /* Start invisible */
+        }
+
+        /* Add delays for sequential animation */
+        .animate-delay-1 { animation-delay: 0.3s; }
+        .animate-delay-2 { animation-delay: 0.6s; }
+        .animate-delay-3 { animation-delay: 0.9s; }
+        .animate-delay-4 { animation-delay: 1.2s; }
+        .animate-delay-5 { animation-delay: 1.5s; }
+        .animate-delay-6 { animation-delay: 1.8s; }
+
+
+        /* Audio Control Button Styling */
+        #audioControl {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: rgba(138, 123, 116, 0.7); /* Muted brown with transparency */
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #audioControl:hover {
+            background-color: rgba(109, 95, 89, 0.9); /* Darker muted brown on hover */
+        }
+
+        /* Darker overlay for Hero Section */
+        .hero-overlay-darker {
+            background-color: rgba(0, 0, 0, 0.6); /* Increased opacity from 0.4 to 0.6 */
+        }
+
+        /* Countdown Styling */
+        #countdown {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        #countdown div {
+            text-align: center;
+        }
+
+        #countdown .value {
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+         #countdown .label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+         }
+
+        /* --- Text Outline and Shadow for Hero Section Headings --- */
+        .relative.z-10.text-white h1,
+        .relative.z-10.text-white h3 {
+            /* Remove stabilo background styles */
+            background-color: transparent;
+            padding: 0;
+            width: auto;
+            margin: 0;
+            display: block; /* Revert to block display */
+            line-height: 1.2; /* Adjust line height if needed */
+
+            /* Remove outline and shadow */
+            color: white; /* Ensure text color is white */
+            -webkit-text-stroke: initial; /* Remove outline */
+            text-stroke: initial; /* Remove outline */
+            text-shadow: none; /* Remove shadow */
+        }
+
+        /* Adjust specific margins for h1 and h3 in hero section */
+        .relative.z-10.text-white h3 {
+            margin-bottom: 0.5rem; /* Space below "Undangan Pernikahan" */
+        }
+
+         .relative.z-10.text-white h1 {
+            margin-bottom: 1rem; /* Space below "Fadhil & Reynard" */
+         }
+
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <audio id="backgroundMusic" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2025/05/13/audio_ef3c42455e.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <button id="audioControl">
+        ►
+    </button>
+
+    <section class="relative h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('https://s-i.huffpost.com/gen/4020050/images/o-WEDDING-VOWS-facebook.jpg');">
+        <div class="absolute inset-0 hero-overlay-darker"></div>
+        <div class="relative z-10 text-white p-6 rounded-lg max-w-2xl mx-auto">
+            <h3 class="text-xl md:text-2xl mb-4 font-light animate-fadeIn">Undangan Pernikahan</h3>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fadeIn animate-delay-1">Fadhil & Reynard</h1>
+            <p class="text-lg md:text-xl mb-8 animate-fadeIn animate-delay-2">Akan segera melangsungkan pernikahan</p>
+            <p class="text-md md:text-lg animate-fadeIn animate-delay-3">Selasa, 20 Mei 2025</p>
+
+            <div id="countdown" class="animate-fadeIn animate-delay-4">
+                <div>
+                    <div class="value" id="days">00</div>
+                    <div class="label">Hari</div>
+                </div>
+                <div>
+                    <div class="value" id="hours">00</div>
+                    <div class="label">Jam</div>
+                </div>
+                <div>
+                    <div class="value" id="minutes">00</div>
+                    <div class="label">Menit</div>
+                </div>
+                <div>
+                    <div class="value" id="seconds">00</div>
+                    <div class="label">Detik</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-4 section-bg">
+        <div class="container mx-auto text-center max-w-3xl animate-fadeIn animate-delay-4">
+            <h2 class="text-3xl md:text-4xl mb-8">Assalamualaikum Warahmatullahi Wabarakatuh</h2>
+            <p class="text-lg mb-4">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami.</p>
+            <p class="text-lg">Yang Insya Allah akan dilaksanakan pada:</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-4 section-bg">
+        <div class="container mx-auto text-center max-w-4xl animate-fadeIn animate-delay-4">
+            <h2 class="text-3xl md:text-4xl mb-8">Detail Acara</h2>
+            <div class="flex flex-col md:flex-row justify-center md:space-x-8 space-y-8 md:space-y-0">
+                <div class="w-full md:w-1/2 p-6 section-bg rounded-lg animate-fadeIn animate-delay-5">
+                    <h3 class="text-2xl mb-4">Akad Nikah</h3>
+                    <p class="mb-2">Selasa, 20 Desember 2025</p>
+                    <p class="mb-4">Pukul 12:00 WIB</p>
+                    <p class="font-semibold mb-2">Gedung Griya Patra</p>
+                    <a href="https://maps.app.goo.gl/1W5tPore5WR8nEGE9" target="_blank" class="inline-block mt-4 text-blue-600 hover:underline">Lihat di Google Maps</a>
+                </div>
+                <div class="w-full md:w-1/2 p-6 section-bg rounded-lg animate-fadeIn animate-delay-5">
+                    <h3 class="text-2xl mb-4">Resepsi</h3>
+                    <p class="mb-2">Sabtu, 25 Desember 2025</p>
+                    <p class="mb-4">Pukul 15:00 WIB</p>
+                    <p class="font-semibold mb-2">Gedung Patra Graha</p>
+                     <a href="https://maps.app.goo.gl/EYsd3ndL1MYwKWy68" target="_blank" class="inline-block mt-4 text-blue-600 hover:underline">Lihat di Google Maps</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <section class="py-16 px-4 bg-gray-100 text-center">
+        <div class="container mx-auto max-w-3xl italic text-gray-700 animate-fadeIn animate-delay-4">
+            <p class="text-lg md:text-xl mb-4">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."</p>
+            <p class="text-md">- Q.S Ar-Rum: 21</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-4 section-bg">
+        <div class="container mx-auto text-center max-w-4xl animate-fadeIn animate-delay-4">
+            <h2 class="text-3xl md:text-4xl mb-8">Mempelai</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center md:space-x-12 space-y-8 md:space-y-0">
+                <div class="w-full md:w-1/2 animate-fadeIn animate-delay-5">
+                    <h3 class="text-2xl mb-2">Fadhil</h3>
+                    <p>Putra dari Bapak Umar & Ibu Tarmini</p>
+                    </div>
+                <div class="text-4xl text-gray-500 font-light hidden md:block animate-fadeIn animate-delay-5">&</div>
+                 <div class="text-4xl text-gray-500 font-light md:hidden animate-fadeIn animate-delay-5">&</div>
+                <div class="w-full md:w-1/2 animate-fadeIn animate-delay-5">
+                    <h3 class="text-2xl mb-2">Reynard</h3>
+                    <p>Putra dari Ibu Uwi</p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-16 px-4 bg-gray-100 text-center">
+        <div class="container mx-auto max-w-3xl animate-fadeIn animate-delay-4">
+            <h2 class="text-3xl md:text-4xl mb-8">Wassalamualaikum Warahmatullahi Wabarakatuh</h2>
+            <p class="text-lg mb-6">Atas perhatian dan doa restu Bapak/Ibu/Saudara/i, kami ucapkan terima kasih.</p>
+            <p class="text-xl font-semibold">Kami yang berbahagia,</p>
+            <p class="text-2xl font-semibold mt-2">Fadhil & Reynard</p>
+        </div>
+    </section>
+
+
+    <footer class="py-8 text-center text-sm text-gray-600 animate-fadeIn animate-delay-4">
+        <p>© 2025 Undangan Pernikahan Fadhil & Reynard. Dibuat dengan cinta.</p>
+    </footer>
+
+    <script>
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        const audioControl = document.getElementById('audioControl');
+
+        function attemptPlayMusic() {
+            backgroundMusic.play().then(() => {
+                console.log('Music started on scroll.');
+                window.removeEventListener('scroll', attemptPlayMusic);
+            }).catch(error => {
+                console.log('Music playback failed on scroll:', error);
+            });
+        }
+        window.addEventListener('scroll', attemptPlayMusic); // Corrected typo back to attemptPlayMusic
+
+        audioControl.addEventListener('click', () => {
+            if (backgroundMusic.paused) {
+                backgroundMusic.play().catch(error => {
+                     console.log('Play after button click failed:', error);
+                });
+                audioControl.innerHTML = '❚❚';
+            } else {
+                backgroundMusic.pause();
+                audioControl.innerHTML = '►';
+            }
+        });
+
+        backgroundMusic.addEventListener('play', () => {
+            audioControl.innerHTML = '❚❚';
+        });
+
+        backgroundMusic.addEventListener('pause', () => {
+            audioControl.innerHTML = '►';
+        });
+
+         backgroundMusic.addEventListener('volumechange', () => {
+            if (backgroundMusic.muted) {
+                audioControl.innerHTML = '🔇';
+            } else if (backgroundMusic.paused) {
+                 audioControl.innerHTML = '►';
+            } else {
+                 audioControl.innerHTML = '❚❚';
+            }
+         });
+
+
+        // --- Countdown Script ---
+        // Set the date and time of the wedding (Year, Month (0-11), Day, Hour, Minute, Second)
+        // Month is 0-indexed, so May is 4.
+        const weddingDate = new Date("May 20, 2025 12:00:00").getTime(); // Set target to May 25, 2025 12:00 PM
+
+
+        // Update the countdown every 1 second
+        const countdownInterval = setInterval(function() {
+
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById("countdown").innerHTML = "Kami Telah Menikah!";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = String(days).padStart(2, '0');
+            document.getElementById("hours").innerHTML = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerHTML = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerHTML = String(seconds).padStart(2, '0');
+
+        }, 1000);
+
+    </script>
+
+</body>
+</html>
